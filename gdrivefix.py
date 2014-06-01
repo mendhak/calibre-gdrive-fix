@@ -1,7 +1,7 @@
 import os
 from xml.dom import minidom
 
-ebooks_directory = "/homoks"
+ebooks_directory = "/home/mendhak/Desktop/EBooks"
 
 
 def getCalibreId(opfPath):
