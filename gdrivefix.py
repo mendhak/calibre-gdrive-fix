@@ -1,5 +1,6 @@
 import os
 from xml.dom import minidom
+import shutil
 
 ebooks_directory = "/home/mendhak/Desktop/EBooks"
 
@@ -14,8 +15,13 @@ def getCalibreId(opfPath):
 for root, dirs, files in os.walk(ebooks_directory):
     for file in files:
         if file.endswith('metadata.opf'):
-            print os.path.join(root, file)
-            print getCalibreId(os.path.join(root, file))
+            calibre_id = getCalibreId(os.path.join(root, file))
+            calibre_fragment = " (" + calibre_id + ")"
+            if calibre_fragment not in root:
+                print "Moving files to " + os.path.join(root + calibre_fragment)
+                shutil.rmtree(os.path.join(root+calibre_fragment), ignore_errors=True)
+                shutil.move(os.path.join(root), os.path.join(root+calibre_fragment))
+
 
 
 
