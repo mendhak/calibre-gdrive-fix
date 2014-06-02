@@ -1,8 +1,16 @@
 import os
+import sys
 from xml.dom import minidom
 import shutil
 
-ebooks_directory = "/home/mendhak/Desktop/EBooks"
+#ebooks_directory = "/home/mendhak/Desktop/EBooks"
+ebooks_directory = raw_input("Enter path to your ebooks directory: ")
+
+print ebooks_directory
+if ebooks_directory is None or len(ebooks_directory) < 3:
+    print "Please enter a proper directory path"
+    exit(1)
+
 
 
 def getCalibreId(opfPath):
