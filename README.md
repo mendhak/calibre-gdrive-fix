@@ -1,4 +1,4 @@
-calibre-gdrive-fix
+Calibre Google Drive Fix
 ==================
 
 Restores ebook directories with their Calibre IDs, originally removed by Google Drive. 
